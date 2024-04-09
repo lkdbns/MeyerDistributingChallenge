@@ -1,0 +1,134 @@
+# Meyer Distributing Coding Test
+
+This is my submition for the Meyer Distributing coding test given to me for the Junior Backend Developer role.
+
+### Getting Started
+
+#### The following are the instructions I used to run the project on your local machine.
+
+- ###### Navigate to the src directory
+
+```bash
+dotnet run
+```
+
+This will switch to the node version specified in `.nvmrc`.
+
+- ###### Install yarn(berry).
+
+  If yarn is not installed follow the instructions [here](https://yarnpkg.com/getting-started/install) to install yarn.
+  Check the version of yarn installed.
+
+  If the yarn version is above `v3.6.3`, then you are good to go and can skip to the [next step](#configure-environment-variables). If not follow along below.
+
+  - Enable [corepack](https://nodejs.org/api/corepack.html)
+    ```bash
+    corepack enable
+    ```
+  - Install yarn berry(modern yarn)
+    ```bash
+    yarn set version berry
+    ```
+
+- ###### Configure environment variables
+
+  Create a new file `.env` in the root folder of the project and add all variables as documented in `./.env.sample`.
+
+- ###### Install dependencies
+
+  ```bash
+  yarn install
+  ```
+
+- ###### Run the development server:
+
+  ```bash
+  yarn dev
+  ```
+
+  Open http://localhost:3000 with your browser to see the result.
+
+- ###### Create build files by running
+
+  ```bash
+  yarn build
+  ```
+
+- ###### Start the production server by running
+
+  ```bash
+  yarn start
+  ```
+
+  > [!IMPORTANT]
+  > You must have created build files before starting production server
+
+- ###### Lint-check the files by running
+
+  ```bash
+  yarn lint
+  ```
+
+- ###### Lint check staged files only
+
+  ```bash
+  yarn lint:staged
+  ```
+
+- ###### Fix lint errors by running
+
+  ```bash
+  yarn lint:fix
+  ```
+
+- ###### Configure/ install husky(pre-commit hooks) by running
+
+  ```bash
+  yarn prepare
+  ```
+
+- ###### Run stylelint
+
+  This runs checks on CSS files using prettier and stylelint
+
+  ```bash
+  yarn stylelint
+  ```
+
+- ###### Fix styling errors
+  ```bash
+  yarn stylelint:fix
+  ```
+
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+### Debugging Next fullstack
+
+- This app has [launch.json](./.vscode/launch.json) configured to enable debugging with [VS code debugger](https://code.visualstudio.com/docs/editor/debugging).
+
+  Go to the Debug panel (`Ctrl+Shift+D` on Windows/Linux, `⇧+⌘+D` on macOS), select a launch configuration, then press `F5` or select Debug: Start Debugging from the Command Palette to start your debugging session.
+
+  Ref: https://nextjs.org/docs/pages/building-your-application/configuring/debugging#debugging-with-vs-code
+
+- By default, this app has `--inspect` flag passed along with the [dev](#run-the-development-server) script. On running `yarn dev`, open a new tab in Chrome and visit `chrome://inspect`, where you should see this Next.js application inside the Remote Target section. Click inspect under your application to open a separate DevTools window, then go to the Sources tab.
+
+Ref: https://nextjs.org/docs/pages/building-your-application/configuring/debugging#debugging-with-chrome-devtools
+
+Any debugger that can attach to Node.js can also be used to debug the Next.js application. Check the [debugging Guide](https://nodejs.org/en/docs/guides/debugging-getting-started/) for insights into debugging Node.js.
+
+### Documentation links for tools being used in the project
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Next.js GitHub repository](https://github.com/vercel/next.js/)
+- [Next.js Folder structure](https://nextjs.org/docs/getting-started/project-structure)
+- [Styling next with Tailwind](https://nextjs.org/docs/app/building-your-application/styling/tailwind-css)
+- [Writing stories with Storybook 7](https://storybook.js.org/docs/react/writing-stories/introduction)
+- [Authentication with Next auth](https://next-auth.js.org/getting-started/introduction)
+
+### Recommended VS code extensions
+
+- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+- [Eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Grammarly](https://marketplace.visualstudio.com/items?itemName=znck.grammarly)
