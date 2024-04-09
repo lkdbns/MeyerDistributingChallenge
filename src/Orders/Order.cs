@@ -11,7 +11,7 @@ namespace InterviewTest.Orders
         {
             OrderNumber = orderNumber;
             Customer = customer;
-            OrderDate = DateTime.Now;
+            OrderDate = DateTime.UtcNow;
             Products = new List<OrderedProduct>();
         }
 
