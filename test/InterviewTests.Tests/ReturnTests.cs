@@ -73,5 +73,26 @@ namespace InterviewTests.Tests
                          product2.GetSellingPrice() + 
                          product3.GetSellingPrice(), customer.GetTotalReturns());
         }
+
+        [Fact]
+        public void EmptyReturn() {
+            OrderRepository orderRepo = new OrderRepository();
+            ReturnRepository returnRepo = new ReturnRepository();
+
+            // Create customer
+            ICustomer customer = new TruckAccessoriesCustomer(orderRepo, returnRepo);
+
+            // Create order
+            string orderNumber = "123";
+            IOrder order = new Order(orderNumber, customer);
+            
+            //Create return
+            string returnNumber = "456";
+            IReturn rga = new Return(returnNumber, order);
+
+            // Assert
+            Assert.Equal(0, rga.ReturnedProducts.Count);
+            Assert.Equal(0, customer.GetTotalReturns());
+        }
     }
 }
