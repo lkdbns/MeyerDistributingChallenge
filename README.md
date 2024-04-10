@@ -1,20 +1,26 @@
 # Meyer Distributing Coding Test
+This is my submition for the [Meyer Distributing](https://www.meyerdistributing.com/) coding test provided to me for the Junior Backend Developer role. The code was developed using [.NET Framework 5.0](https://dotnet.microsoft.com/en-us/download/dotnet/5.0) with unit tests using [xUnit](https://xunit.net/).
 
-This is my submition for the Meyer Distributing coding test given to me for the Junior Backend Developer role. The program was made using NET Framework 5.0. The unit testing utilizes xunit.
+## Getting Started
 
-### Getting Started
+### Follow these instructions to run the project on your local machine.
 
-#### The following are the instructions I used to run the project on your local machine.
-
-- ###### Navigate to the src directory.
+#### Clone this repo
 
 ```bash
-dotnet run
+$ git clone https://github.com/lkdbns/MeyerDistributingChallenge
 ```
 
-This will run the main program.
+#### Navigate to the src directory and run the main project
 
-- ###### Navigate to the test/InterviewTests.Tests directory
 ```bash
-dotnet test
+$ cd MeyerDistributingChallenge\src
+$ dotnet run
+```
+
+#### Now, navigate to the tests directory and run the unit tests
+
+```bash
+$ cd ..\test\InterviewTests.Tests
+$ dotnet test
 ```
