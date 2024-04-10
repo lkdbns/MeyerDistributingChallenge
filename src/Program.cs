@@ -32,11 +32,11 @@ namespace InterviewTest
             // ------------------------
             // ~~ Run the console app after implementing the Code Changes section above! ~~
             // 1: Meyer Truck Equipment's returns are not being processed.
-                    //ANSWER: In the ProcessTruckAccessoriesExample() method the generated return was not being added to the customer object.
+                    // ANSWER: In the ProcessTruckAccessoriesExample() method the generated return was not being added to the customer object.
             // 2: Ruxer Ford Lincoln, Inc.'s totals are incorrect.
                     //ANSWER: This was due to the repository storing information for all customers. 
-                    //I fixed this by implementing overloaded methods for the get methods in both repositories, so that you can call it specifying a customer name.
-                    //I chose to use an overloaded method over using default parameters in order to retain the very straight forward return if the full repository is desired.
+                    // I fixed this by implementing overloaded methods for the get methods in both repositories, so that you can call it specifying a customer name.
+                    // I chose to use an overloaded method over using default parameters in order to retain the very straight forward return if the full repository is desired.
             
 
             // ------------------------

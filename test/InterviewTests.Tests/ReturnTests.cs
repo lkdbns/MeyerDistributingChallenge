@@ -6,10 +6,10 @@ using InterviewTest.Returns;
 
 namespace InterviewTests.Tests
 {
-    public class OrderTests
+    public class ReturnTests
     {
         [Fact]
-        public void BasicOrderTest()
+        public void BasicReturnTest()
         {
             // Create repositories
             OrderRepository orderRepo = new OrderRepository();
@@ -26,16 +26,20 @@ namespace InterviewTests.Tests
             IProduct product = new ReplacementBumper();
             order.AddProduct(product);
 
+            //Create return
+            string returnNumber = "456";
+            IReturn rga = new Return(returnNumber, order);
+            rga.AddProduct(order.Products.First());
+
             // Assert
-            Assert.Equal(orderNumber, order.OrderNumber);
-            Assert.Equal(customer.GetName(), order.Customer.GetName());
-            Assert.True(DateTime.UtcNow > order.OrderDate);
-            Assert.Equal(1, order.Products.Count);
-            Assert.Equal(product.GetProductNumber(), order.Products.First().Product.GetProductNumber());
+            Assert.Equal(returnNumber, rga.ReturnNumber);
+            Assert.Equal(order.OrderNumber, rga.OriginalOrder.OrderNumber);
+            Assert.Equal(1, rga.ReturnedProducts.Count);
+            Assert.Equal(product.GetProductNumber(), rga.ReturnedProducts.First().OrderProduct.Product.GetProductNumber());
         }
 
         [Fact]
-        public void OrderMultipleProducts() {
+        public void ReturnMultipleProducts() {
             OrderRepository orderRepo = new OrderRepository();
             ReturnRepository returnRepo = new ReturnRepository();
 
@@ -55,11 +59,19 @@ namespace InterviewTests.Tests
             order.AddProduct(product3);
             customer.CreateOrder(order);
 
+            //Create return
+            string returnNumber = "456";
+            IReturn rga = new Return(returnNumber, order);
+            rga.AddProduct(order.Products[0]);
+            rga.AddProduct(order.Products[1]);
+            rga.AddProduct(order.Products[2]);
+            customer.CreateReturn(rga);
+
             // Assert
-            Assert.Equal(3, order.Products.Count);
+            Assert.Equal(3, rga.ReturnedProducts.Count);
             Assert.Equal(product1.GetSellingPrice() + 
                          product2.GetSellingPrice() + 
-                         product3.GetSellingPrice(), customer.GetTotalSales());
+                         product3.GetSellingPrice(), customer.GetTotalReturns());
         }
     }
 }
