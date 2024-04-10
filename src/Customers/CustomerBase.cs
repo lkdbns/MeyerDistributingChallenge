@@ -41,8 +41,8 @@ namespace InterviewTest.Customers
 
         /*
             I utilize a foreach loop to iterate over the list of orders.
-            Per order I need to loop again over each product listed in the order 
-            and retrieve the selling price adding it to the totalSales variable.
+            For each order I need to loop through the product list and 
+            retrieve the selling price adding it to the totalSales variable.
             The method has O(n^2) time complexity and O(n) space complexity.
         */
         public float GetTotalSales()
@@ -65,8 +65,8 @@ namespace InterviewTest.Customers
 
         /*
             I utilize a foreach loop to iterate over the list of returns.
-            Per return I need to loop again over each product listed in the return 
-            and retrieve the selling price adding it to the totalReturn variable.
+            For each return I need to loop through the product list and
+            retrieve the selling price adding it to the totalReturn variable.
             The method has O(n^2) time complexity and O(n) space complexity.
         */
         public float GetTotalReturns()
@@ -89,8 +89,8 @@ namespace InterviewTest.Customers
 
         /*
             Since there is no manufactruing cost for a product I assume the calculation for 
-            profit is sales-retuns, so for my implementation I simply call GetTotalSales and 
-            subtract GetTotalReturns 
+            profit is sales-retuns. For my implementation, I simply call GetTotalSales and 
+            subtract GetTotalReturns.
         */
         public float GetTotalProfit()
         {

@@ -29,8 +29,8 @@ namespace InterviewTest.Returns
 
         /*
             This overloaded Get function is used to get the list of returns 
-            for a specific customer I iterate over the returns using the FindAll 
-            method to filter out any order not matching the specified customer name
+            for a specific customer. I iterate over the returns using the FindAll 
+            method to filter out any order not matching the specified customer name.
         */
         public List<IReturn> Get(String customerName) {
             return returns.FindAll(
